@@ -1,0 +1,56 @@
+@startuml MCD Pomodoro App
+
+entity "User" as user {
+  * id : Long <<PK>>
+  --
+  username : String
+  email : String
+  password_hash : String
+  created_at : DateTime
+  updated_at : DateTime
+}
+
+entity "Pomodoro" as pomodoro {
+  * id : Long <<PK>>
+  --
+  * user_id : Long <<FK>>
+  start_time : DateTime
+  end_time : DateTime
+  type : Enum
+  completed : Boolean
+}
+
+entity "Task" as task {
+  * id : Long <<PK>>
+  --
+  * user_id : Long <<FK>>
+  title : String
+  description : String
+  status : Enum
+  created_at : DateTime
+  updated_at : DateTime
+}
+
+entity "Settings" as settings {
+  * id : Long <<PK>>
+  --
+  * user_id : Long <<FK>>
+  work_duration : Integer
+  short_break_duration : Integer
+  long_break_duration : Integer
+  daily_goal : Integer
+  notification_enabled : Boolean
+}
+
+entity "PomodoroTask" as pomodoro_task {
+  * pomodoro_id : Long <<PK,FK>>
+  * task_id : Long <<PK,FK>>
+}
+
+user "1" -- "0..*" pomodoro : possède
+user "1" -- "0..*" task : crée
+user "1" -- "0..1" settings : a
+pomodoro "0..*" -- "0..*" task : est associé à
+(pomodoro, task) .. pomodoro_task
+
+@enduml

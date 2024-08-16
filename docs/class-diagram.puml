@@ -1,0 +1,70 @@
+@startuml Pomodoro App Class Diagram
+
+class User {
+  -id: Long
+  -username: String
+  -email: String
+  -passwordHash: String
+  -createdAt: DateTime
+  -updatedAt: DateTime
+  +getPomodoros()
+  +getTasks()
+  +getSettings()
+}
+
+class Pomodoro {
+  -id: Long
+  -user: User
+  -startTime: DateTime
+  -endTime: DateTime
+  -type: PomodoroType
+  -completed: Boolean
+  +getDuration()
+}
+
+class Task {
+  -id: Long
+  -user: User
+  -title: String
+  -description: String
+  -status: TaskStatus
+  -createdAt: DateTime
+  -updatedAt: DateTime
+  +getPomodoros()
+}
+
+class Settings {
+  -id: Long
+  -user: User
+  -workDuration: Integer
+  -shortBreakDuration: Integer
+  -longBreakDuration: Integer
+  -dailyGoal: Integer
+  -notificationEnabled: Boolean
+  +updateSettings()
+}
+
+class PomodoroTask {
+  -pomodoro: Pomodoro
+  -task: Task
+}
+
+enum PomodoroType {
+  WORK
+  SHORT_BREAK
+  LONG_BREAK
+}
+
+enum TaskStatus {
+  TODO
+  IN_PROGRESS
+  COMPLETED
+}
+
+User "1" -- "0..*" Pomodoro
+User "1" -- "0..*" Task
+User "1" -- "1" Settings
+Pomodoro "0..*" -- "0..*" Task
+(Pomodoro, Task) .. PomodoroTask
+
+@enduml

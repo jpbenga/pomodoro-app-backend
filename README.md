@@ -42,11 +42,11 @@ Pour modifier un diagramme :
 Les wireframes de l'application Pomodoro sont disponibles dans le dossier [wireframes](wireframes/).
 
 ### Visualisation
-- [Wireframe principal (PNG)](wireframes/pomodorowireframe.png)
+- [Wireframe principal (PNG)](docs/wireframes/pomodorowireframe.png)
 
 ### Modification
 Le fichier source Excalidraw est également disponible pour modification :
-[Fichier source Excalidraw](wireframes/pomodorowireframe.excalidraw)
+[Fichier source Excalidraw](docs/wireframes/pomodorowireframe.excalidraw)
 
 Pour modifier le wireframe :
 1. Téléchargez le fichier .excalidraw

@@ -16,7 +16,7 @@ public class Pomodoro {
     private LocalDateTime endTime;
     @Enumerated(EnumType.STRING)
     private PomodoroType type;
-    @ManyToOne
     private boolean completed;
+    @ManyToOne
     private User user;
 }

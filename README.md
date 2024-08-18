@@ -22,7 +22,7 @@ Les diagrammes techniques et la documentation détaillée du projet sont disponi
 ## Diagrammes
 
 - [Modèle Conceptuel de Données (MCD)](docs/mcd.png)
-- [Diagramme de Classes UML](docs/class-diagram.puml)
+- [Diagramme de Classes UML](uml.png)
 
 Pour visualiser ces diagrammes, vous pouvez utiliser :
 - L'extension PlantUML pour VSCode

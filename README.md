@@ -60,13 +60,97 @@ Pour modifier le wireframe :
 ## Installation et démarrage
 
 ### Prérequis
-- Node.js (version 14.x ou supérieure)
-- Java JDK (version 11 ou supérieure)
-- Maven
-- PostgreSQL
+- Docker
+- Docker Compose
 
-### Frontend
-```bash
-cd pomodoro-app-frontend
-npm install
-npm start
+Aucune installation locale de Java ou Maven n'est nécessaire grâce à l'utilisation de Docker.
+
+## Configuration de l'environnement de développement
+
+1. Clonez ce repository :
+
+git clone https://github.com/your-organization/pomodoro-app-backend.git
+cd pomodoro-app-backend
+
+2. Lancez l'environnement de développement :
+
+docker-compose -f docker-compose.dev.yml up --build
+
+3. L'application sera accessible à l'adresse `http://localhost:8080`.
+
+4. Pour arrêter l'application :
+
+docker-compose -f docker-compose.dev.yml down
+
+## Développement
+
+- Les modifications apportées aux fichiers sources seront automatiquement détectées et l'application sera rechargée.
+- Si vous modifiez le `pom.xml`, reconstruisez l'image Docker :
+
+docker-compose -f docker-compose.dev.yml up --build
+
+## Base de données de développement
+
+- PostgreSQL est utilisé comme base de données de développement.
+- Accès à la base de données :
+- Host: localhost
+- Port: 5432
+- Database: pomodorodb
+- Username: pomodoro
+- Password: pomodoro
+
+## Intégration Continue et Déploiement Continu (CI/CD)
+
+Ce projet utilise GitHub Actions pour l'intégration continue et le déploiement continu.
+
+- Les tests sont exécutés automatiquement à chaque push et pull request.
+- Lorsqu'un push est effectué sur la branche `main` et que tous les tests passent, une nouvelle image Docker est automatiquement construite et poussée sur Docker Hub.
+
+### Configuration Docker Hub
+
+Ce projet utilise un compte Docker Hub dédié pour stocker les images Docker. 
+
+Pour les membres de l'équipe :
+- Les informations d'accès au compte Docker Hub du projet sont gérées par [nom du responsable ou de l'équipe].
+- Si vous avez besoin d'accéder au compte Docker Hub pour le développement ou le déploiement, veuillez contacter [nom/email du responsable].
+
+Pour la configuration CI/CD :
+- Les secrets nécessaires (`DOCKER_HUB_USERNAME` et `DOCKER_HUB_ACCESS_TOKEN`) sont déjà configurés dans les paramètres du repository GitHub.
+- Ces secrets sont gérés par les administrateurs du projet et ne nécessitent pas d'action de la part des développeurs individuels.
+
+### Workflow CI/CD
+
+Le workflow CI/CD est défini dans le fichier `.github/workflows/ci-cd.yml`. Il comprend les étapes suivantes :
+
+1. Exécution des tests
+2. Construction du projet avec Maven
+3. Construction de l'image Docker
+4. Push de l'image Docker sur Docker Hub (uniquement pour les pushes sur la branche `main`)
+
+Vous pouvez suivre l'exécution du workflow dans l'onglet "Actions" de votre repository GitHub.
+
+## Déploiement en production
+
+Pour déployer en production, utilisez :
+
+docker-compose -f docker-compose.prod.yml up --build
+
+Assurez-vous d'avoir correctement configuré les variables d'environnement nécessaires pour la production.
+
+## Contribution
+
+1. Forkez le projet
+2. Créez votre branche de fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Poussez vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
+
+Veuillez vous assurer que vos contributions respectent les normes de codage du projet et sont accompagnées de tests appropriés.
+
+## Licence
+
+Ce projet est sous licence [insérez le type de licence ici, par exemple MIT]. Voir le fichier `LICENSE` pour plus de détails.
+
+## Contact
+
+Pour toute question ou suggestion, n'hésitez pas à ouvrir une issue ou à contacter l'équipe de développement à [adresse email du projet].

@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/pomodorodb
+      - SPRING_DATASOURCE_USERNAME=pomodoro
+      - SPRING_DATASOURCE_PASSWORD=pomodoro
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=pomodorodb
+      - POSTGRES_USER=pomodoro
+      - POSTGRES_PASSWORD=pomodoro
+    volumes:
+      - postgres_data_prod:/var/lib/postgresql/data
+
+volumes:
+  postgres_data_prod:

@@ -43,4 +43,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: your-dockerhub-username/pomodoro-app-backend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pomodoro-app-backend:latest

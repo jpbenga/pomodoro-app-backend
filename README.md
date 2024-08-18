@@ -43,6 +43,9 @@ Les wireframes de l'application Pomodoro sont disponibles dans le dossier [wiref
 
 ### Visualisation
 - [Wireframe principal (PNG)](docs/wireframes/pomodorowireframe.png)
+- [Version interactive sur Excalidraw](https://excalidraw.com/#json=o2KUfBnZDUJemf9yxZNjh,Oof_8vbA-xXK6gWxnW4tag)
+   - Ce lien vous permet de voir et modifier le wireframe en temps réel.
+   - Idéal pour la collaboration et les itérations rapides.
 
 ### Modification
 Le fichier source Excalidraw est également disponible pour modification :

@@ -70,24 +70,24 @@ Aucune installation locale de Java ou Maven n'est nécessaire grâce à l'utilis
 1. Clonez ce repository :
 
 `git clone https://github.com/your-organization/pomodoro-app-backend.git`
-cd pomodoro-app-backend
+`cd pomodoro-app-backend`
 
 2. Lancez l'environnement de développement :
 
-docker-compose -f docker-compose.dev.yml up --build
+`docker-compose -f docker-compose.dev.yml up --build`
 
 3. L'application sera accessible à l'adresse `http://localhost:8080`.
 
 4. Pour arrêter l'application :
 
-docker-compose -f docker-compose.dev.yml down
+`docker-compose -f docker-compose.dev.yml down`
 
 ## Développement
 
 - Les modifications apportées aux fichiers sources seront automatiquement détectées et l'application sera rechargée.
 - Si vous modifiez le `pom.xml`, reconstruisez l'image Docker :
 
-docker-compose -f docker-compose.dev.yml up --build
+`docker-compose -f docker-compose.dev.yml up --build`
 
 ## Base de données de développement
 
@@ -133,7 +133,7 @@ Vous pouvez suivre l'exécution du workflow dans l'onglet "Actions" de votre rep
 
 Pour déployer en production, utilisez :
 
-docker-compose -f docker-compose.prod.yml up --build
+`docker-compose -f docker-compose.prod.yml up --build`
 
 Assurez-vous d'avoir correctement configuré les variables d'environnement nécessaires pour la production.
 

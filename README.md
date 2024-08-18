@@ -69,7 +69,7 @@ Aucune installation locale de Java ou Maven n'est nécessaire grâce à l'utilis
 
 1. Clonez ce repository :
 
-git clone https://github.com/your-organization/pomodoro-app-backend.git
+`git clone https://github.com/your-organization/pomodoro-app-backend.git`
 cd pomodoro-app-backend
 
 2. Lancez l'environnement de développement :

@@ -21,7 +21,7 @@ Les diagrammes techniques et la documentation détaillée du projet sont disponi
 
 ## Diagrammes
 
-- [Modèle Conceptuel de Données (MCD)](docs/mcd.puml)
+- [Modèle Conceptuel de Données (MCD)](docs/mcd.png)
 - [Diagramme de Classes UML](docs/class-diagram.puml)
 
 Pour visualiser ces diagrammes, vous pouvez utiliser :
